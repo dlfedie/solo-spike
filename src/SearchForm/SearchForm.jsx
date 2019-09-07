@@ -15,7 +15,7 @@ class SearchForm extends Component {
         search: '',
         results: [],
         rating: 1,
-        value: 0
+        value: 0,
     }
 
     onChange = (event) => {
@@ -53,9 +53,9 @@ class SearchForm extends Component {
 
     render() {
 
-        // let bookList = this.state.results.map((book) => {
-        //     return <li>Title: {book.volumeInfo.title} Author: {book.volumeInfo.authors[0]} Cover: <img src={book.volumeInfo.imageLinks.smallThumbnail} alt="book cover" /> </li>
-        // })
+        let bookList = this.state.results.map((book) => {
+            return <li>Title: {book.volumeInfo.title} Author: {book.volumeInfo.authors && book.volumeInfo.authors[0]} Cover: <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail} alt="book cover" /> </li>
+        })
 
         return (
             <div>
@@ -74,10 +74,10 @@ class SearchForm extends Component {
                     value={this.state.value}
                     onChange={this.handleChange} /> */}
                 <div>
-                    {JSON.stringify(this.state)}
+                    {/* {JSON.stringify(this.state)} */}
                     <ul>
                         {/* items go here */}
-                        {/* {bookList} */}
+                        {bookList}
                     </ul>
                 </div>
             </div>
