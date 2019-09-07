@@ -6,16 +6,20 @@ import StarRatingComponent from 'react-star-rating-component';
 // import { StarRatingInput} from 'react-star-rating-input';
 // import dotenv from 'dotenv';
 // require('dotenv').config();
+// import SearchBar from 'material-ui-search-bar-enhanced';
+// import SearchBar from 'material-ui-search-bar';
+import { Search, Grid, Header, Segment } from 'semantic-ui-react'
 
+//https://react.semantic-ui.com/modules/search/#types-standard
 
-// const GOOGLE_BOOKS_API_KEY = process.env.GOOGLE_BOOKS_API_KEY
 
 class SearchForm extends Component {
     state = {
         search: '',
         results: [],
         rating: 1,
-        value: 0,
+        value: '',
+        isLoading: true,
     }
 
     onChange = (event) => {
@@ -69,6 +73,33 @@ class SearchForm extends Component {
                     value={this.state.rating}
                     onStarClick={this.onStarClick.bind(this)}
                 />
+                {/* <Grid>
+                    <Grid.Column width={6}>
+                        <Search
+                            loading={this.state.isLoading}
+                            onResultSelect={this.handleResultSelect}
+                            onSearchChange={_.debounce(this.handleSearchChange, 500, {
+                                leading: true,
+                            })}
+                            results={results}
+                            value={value}
+                            {...this.props}
+                        />
+                    </Grid.Column>
+                    <Grid.Column width={10}>
+                        <Segment>
+                            <Header>State</Header>
+                            <pre style={{ overflowX: 'auto' }}>
+                                {JSON.stringify(this.state, null, 2)}
+                            </pre>
+                            <Header>Options</Header>
+                            <pre style={{ overflowX: 'auto' }}>
+                                {JSON.stringify(source, null, 2)}
+                            </pre>
+                        </Segment>
+                    </Grid.Column>
+                </Grid> */}
+                
                 {/* <StarRatingInput
                     size={5}
                     value={this.state.value}
