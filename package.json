@@ -12,7 +12,7 @@
     "mem": "^4.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "2.1.8",
+    "react-scripts": "5.0.1",
     "react-star-rating-component": "^1.4.1",
     "react-star-rating-input": "^8.0.1",
     "semantic-ui-css": "^2.4.1",
